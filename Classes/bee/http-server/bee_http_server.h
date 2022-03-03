@@ -34,7 +34,6 @@ public:
 	std::string dir() { return m_dir; }
 	std::string ip() { return m_ip; }
 	std::string port() { return m_port; }
-	virtual void update(float dt);
 
 private:
 	virtual ~HttpServer();
