@@ -435,37 +435,6 @@ TOLUA_API int lua_module_register_http_server(lua_State* L)
 				tolua_function(L, "port", lua_http_server_port);
 			tolua_endmodule(L);
 		tolua_endmodule(L);
-
-		//lua_pushstring(L, "create");
-		//lua_pushcfunction(L, lua_http_server_create);
-		//lua_rawset(L, -3);
-		//lua_pushstring(L, "start");
-		//lua_pushcfunction(L, lua_http_server_start);
-		//lua_rawset(L, -3);
-		//lua_pushstring(L, "pause");
-		//lua_pushcfunction(L, lua_http_server_pause);
-		//lua_rawset(L, -3);
-		//lua_pushstring(L, "resume");
-		//lua_pushcfunction(L, lua_http_server_resume);
-		//lua_rawset(L, -3);
-		//lua_pushstring(L, "shutdown");
-		//lua_pushcfunction(L, lua_http_server_shutdown);
-		//lua_rawset(L, -3);
-		//lua_pushstring(L, "paused");
-		//lua_pushcfunction(L, lua_http_server_paused);
-		//lua_rawset(L, -3);
-		//lua_pushstring(L, "running");
-		//lua_pushcfunction(L, lua_http_server_running);
-		//lua_rawset(L, -3);
-		//lua_pushstring(L, "dir");
-		//lua_pushcfunction(L, lua_http_server_dir);
-		//lua_rawset(L, -3);
-		//lua_pushstring(L, "ip");
-		//lua_pushcfunction(L, lua_http_server_ip);
-		//lua_rawset(L, -3);
-		//lua_pushstring(L, "port");
-		//lua_pushcfunction(L, lua_http_server_port);
-		//lua_rawset(L, -3);
 	}
 	lua_pop(L, 1);
 	return 1;
