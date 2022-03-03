@@ -32,8 +32,6 @@
 
 我们进行封装的时候可以把它们提取出来作为参数传入，比如：`new HttpServer(dir, ip, port)`。
 
-另外，需要注意的是：由于 `mongoose` 内部实现了事件循环，也就是 `Event loop` 部分，因此需要将这部分代码放在线程中执行，否则会阻塞 `2d-x` 主程序。
-
 考虑到易用性，我们还需要扩展几个基础接口：
 
 -   开启 `start`
@@ -44,13 +42,15 @@
     -   运行中 `running`
     -   已暂停 `paused`
 
+另外，需要注意的是：由于 `mongoose` 内部实现了事件循环，也就是 `Event loop` 部分，因此需要将这部分代码放在线程中执行，否则会阻塞 `2d-x` 主程序。
+
 ## 三、使用
 
-> 上述的接入过程这边已经搞定了，并且还贴心地给各位准备了 `Lua Binding` 接口，大家可以放心食用。
+上述的接入过程这边已经搞定了，并且还贴心地给各位准备了 `Lua Binding` 接口，大家可以放心食用，只需要稍微动下你的手指 _(顺便点个Star)_：
 
 1. 将 `Classes` 下文件导入 `Cocos2d-x` 工程
-2. 在 `AppDelegate.cpp` 中引入 `bee/http-server/lua-http-server.h`
-3. 在 `applicationDidFinishLaunching` 中作为 `lua module` 引入 `lua_module_register_http_server(L)` 即可。
+2. 在 `AppDelegate.cpp` 中引入 `lua-http-server.h`
+3. 在 `applicationDidFinishLaunching` 中调用 `lua_module_register_http_server(L)` 注册即可
 
 以下是在 Lua 层运行的测试的用例：
 
